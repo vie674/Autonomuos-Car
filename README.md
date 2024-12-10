@@ -1,26 +1,42 @@
-1:10 Scale Self-Driving Car
-Project Overview
-This project involves the design and development of a 1:10 scale self-driving car. The car is equipped with various sensors and control systems to enable autonomous navigation, including lane detection, speed control, and real-time communication with a simulation cockpit over Wi-Fi using UDP. The project integrates both hardware and software components, including STM32 microcontroller for motor control, Raspberry Pi for image processing, and various sensors for feedback.
+# 1:10 Autonomous Car Project
 
-Features
-Autonomous Driving: The car is capable of navigating autonomously by detecting lanes and adjusting speed based on the environment.
-Real-Time Communication: Real-time control and feedback from the car to a simulation cockpit via UDP over Wi-Fi.
-Sensor Integration: IMU for orientation feedback, encoders for speed and steering angle, and potentiometer for throttle input.
-Precise Control: Use of STM32 for motor and steering control, optimized for low-latency responses.
-Hardware Components
-Raspberry Pi: Acts as the central processor for image processing and control decision-making.
-STM32 Microcontroller: Handles motor and servo control based on input from sensors and instructions from Raspberry Pi.
-DC Motors and Servo Motors: Control the movement and steering of the car.
-IMU (Inertial Measurement Unit): Provides orientation data for the car.
-Encoder: Measures the rotation speed and steering angle.
-Potentiometer (Gas Pedal): Used for throttle control via an analog-to-digital conversion (ADC) on the STM32.
-Software and Tools Used
-Programming Languages: C (for STM32), Python (for Raspberry Pi)
-Libraries/Frameworks: OpenCV (for lane detection and image processing), UDP (for communication)
-Embedded Development Environment: Keil uVision (for STM32 programming)
-Communication Protocol: UDP for real-time data exchange between the car and the simulation cockpit.
-How It Works
-Lane Detection: The Raspberry Pi processes camera images using OpenCV to detect the lane and adjust the steering angle.
-Motor Control: The STM32 receives control signals from the Raspberry Pi to adjust the speed and steering of the car, based on sensor feedback (IMU, encoder).
-Throttle Control: The throttle input from the gas pedal is read via an ADC on STM32, which adjusts the speed of the car accordingly.
-Real-Time Data Exchange: The car sends real-time speed and steering data to the simulation cockpit via UDP, allowing remote control and monitoring.
+## 🏎️ Overview
+The **1:10 Autonomous Car Project** is a scaled-down prototype designed to emulate real-world autonomous vehicle functionalities. This project focuses on applying robotics, machine learning, and embedded systems to create a self-driving car at 1:10 scale.
+
+## ✨ Key Features
+- **Autonomous Navigation**: Navigate a defined track using sensors and computer vision.
+- **Obstacle Detection and Avoidance**: Utilize LiDAR, ultrasonic sensors, and cameras for obstacle handling.
+- **Vehicle Control**: Precision steering and throttle control with PID algorithms.
+- **RTOS Implementation**: Real-time operating system (RTOS) used for multitasking between perception, control, and communication systems.
+
+## 🔧 Technology Stack
+- **Hardware**: 
+  - Raspberry Pi 4 for high-level processing.
+  - STM32 microcontroller for real-time control.
+  - LiDAR, cameras, and ultrasonic sensors for environment sensing.
+- **Software**:
+  - Python and C++ for control algorithms.
+  - OpenCV for image processing and computer vision.
+  - TensorFlow for machine learning-based lane detection.
+  - RTOS for scheduling critical tasks.
+
+## 🛠️ System Architecture
+The project is divided into three main subsystems:
+1. **Perception**: Collects and processes data from sensors (LiDAR, camera, etc.).
+2. **Planning**: Determines the path and avoids obstacles.
+3. **Control**: Executes throttle, steering, and braking commands.
+
+![System Architecture](system_architecture.png)
+
+## 🚀 Getting Started
+### Prerequisites
+- Raspberry Pi 4 with Raspbian OS.
+- STM32 development board.
+- Compatible sensors (LiDAR, cameras, etc.).
+- Python 3.x and required libraries (see `requirements.txt`).
+
+### Installation
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/1-10-autonomous-car.git
+   cd 1-10-autonomous-car
